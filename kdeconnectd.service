@@ -1,0 +1,11 @@
+[Unit]
+Description=Override kdeconnect service
+After=network-online.service
+
+[Service]
+Restart=on-failure
+Environment=PATH="/usr/bin:$PATH"
+ExecStart=export $(dbus-launch) && kdeconnectd
+
+[Install]
+WantedBy=default.target
