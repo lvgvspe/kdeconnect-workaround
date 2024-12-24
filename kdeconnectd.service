@@ -5,7 +5,7 @@ After=network-online.service
 [Service]
 Restart=on-failure
 Environment=PATH="/usr/bin:$PATH"
-ExecStart=export $(dbus-launch) && kdeconnectd
+ExecStart=/home/lucas/.kdeconnect.sh
 
 [Install]
 WantedBy=default.target
